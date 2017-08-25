@@ -7,11 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO.Ports;
 
 namespace Zephyr
 {
     public partial class Form1 : Form
     {
+        public int endEpoch;
+        public int curEpoch;
+        public int sampling;
+
         public Form1()
         {
             InitializeComponent();
@@ -19,6 +24,10 @@ namespace Zephyr
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            endEpoch = 1000;
+            curEpoch = 0;
+            sampling = 10;
+
             portNo1.Text = serialPort1.PortName;
             portNo2.Text = serialPort2.PortName;
             portNo3.Text = serialPort3.PortName;
@@ -129,7 +138,8 @@ namespace Zephyr
         }
         private void SerialReceived1(object sender, EventArgs e)
         {
-            msg1.Text = serialPort1.ReadExisting();
+            //msg1.Text = serialPort1.ReadExisting();
+            var msgLine1 = serialPort1.ReadExisting();
         }
 
         private void serialPort2_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
@@ -166,6 +176,12 @@ namespace Zephyr
         private void SerialReceived5(object sender, EventArgs e)
         {
             msg5.Text = serialPort5.ReadExisting();
+        }
+
+        private void recordBtn_Click(object sender, EventArgs e)
+        {
+            endEpoch = int.Parse(epochText.Text);
+            sampling = int.Parse(samplingText.Text);
         }
     }
 }
