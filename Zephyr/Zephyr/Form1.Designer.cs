@@ -497,7 +497,7 @@
             this.chartGroup.Controls.Add(this.altChart);
             this.chartGroup.Location = new System.Drawing.Point(10, 195);
             this.chartGroup.Name = "chartGroup";
-            this.chartGroup.Size = new System.Drawing.Size(1221, 467);
+            this.chartGroup.Size = new System.Drawing.Size(1221, 729);
             this.chartGroup.TabIndex = 22;
             this.chartGroup.TabStop = false;
             this.chartGroup.Text = "Chart Area";
@@ -508,13 +508,13 @@
             this.altChart.ChartAreas.Add(chartArea3);
             legend3.Name = "Legend1";
             this.altChart.Legends.Add(legend3);
-            this.altChart.Location = new System.Drawing.Point(7, 21);
+            this.altChart.Location = new System.Drawing.Point(6, 343);
             this.altChart.Name = "altChart";
             series3.ChartArea = "ChartArea1";
             series3.Legend = "Legend1";
             series3.Name = "Series1";
             this.altChart.Series.Add(series3);
-            this.altChart.Size = new System.Drawing.Size(380, 434);
+            this.altChart.Size = new System.Drawing.Size(1202, 380);
             this.altChart.TabIndex = 0;
             this.altChart.Text = "chart1";
             // 
@@ -529,13 +529,13 @@
             this.rawPrsChart.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.rawPrsChart.Legends.Add(legend2);
-            this.rawPrsChart.Location = new System.Drawing.Point(398, 21);
+            this.rawPrsChart.Location = new System.Drawing.Point(8, 21);
             this.rawPrsChart.Name = "rawPrsChart";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.rawPrsChart.Series.Add(series2);
-            this.rawPrsChart.Size = new System.Drawing.Size(410, 434);
+            this.rawPrsChart.Size = new System.Drawing.Size(601, 316);
             this.rawPrsChart.TabIndex = 1;
             this.rawPrsChart.Text = "chart1";
             // 
@@ -545,13 +545,13 @@
             this.rawTmpChart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.rawTmpChart.Legends.Add(legend1);
-            this.rawTmpChart.Location = new System.Drawing.Point(822, 21);
+            this.rawTmpChart.Location = new System.Drawing.Point(615, 21);
             this.rawTmpChart.Name = "rawTmpChart";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.rawTmpChart.Series.Add(series1);
-            this.rawTmpChart.Size = new System.Drawing.Size(386, 434);
+            this.rawTmpChart.Size = new System.Drawing.Size(593, 316);
             this.rawTmpChart.TabIndex = 2;
             this.rawTmpChart.Text = "chart2";
             // 
@@ -559,7 +559,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1246, 662);
+            this.ClientSize = new System.Drawing.Size(1246, 936);
             this.Controls.Add(this.chartGroup);
             this.Controls.Add(this.DataGroup);
             this.Controls.Add(this.portGroup);

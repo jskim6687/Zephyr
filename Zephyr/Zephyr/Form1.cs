@@ -224,7 +224,7 @@ namespace Zephyr
                 var rawPressure1 = lineArray[4];
                 rawPrs[0] = double.Parse(rawPressure1.ToString());
                 var rawTemperature1 = lineArray[3];
-                rawPrs[0] = double.Parse(rawTemperature1.ToString());
+                rawTmp[0] = double.Parse(rawTemperature1.ToString());
             }
         }
 
@@ -245,7 +245,7 @@ namespace Zephyr
                 var rawPressure2 = lineArray[4];
                 rawPrs[1] = double.Parse(rawPressure2.ToString());
                 var rawTemperature2 = lineArray[3];
-                rawPrs[1] = double.Parse(rawTemperature2.ToString());
+                rawTmp[1] = double.Parse(rawTemperature2.ToString());
             }
         }
 
@@ -266,7 +266,7 @@ namespace Zephyr
                 var rawPressure3 = lineArray[4];
                 rawPrs[2] = double.Parse(rawPressure3.ToString());
                 var rawTemperature3 = lineArray[3];
-                rawPrs[2] = double.Parse(rawTemperature3.ToString());
+                rawTmp[2] = double.Parse(rawTemperature3.ToString());
             }
         }
 
@@ -287,7 +287,7 @@ namespace Zephyr
                 var rawPressure4 = lineArray[4];
                 rawPrs[3] = double.Parse(rawPressure4.ToString());
                 var rawTemperature4 = lineArray[3];
-                rawPrs[3] = double.Parse(rawTemperature4.ToString());
+                rawTmp[3] = double.Parse(rawTemperature4.ToString());
             }
         }
 
@@ -308,7 +308,7 @@ namespace Zephyr
                 var rawPressure5 = lineArray[4];
                 rawPrs[4] = double.Parse(rawPressure5.ToString());
                 var rawTemperature5 = lineArray[3];
-                rawPrs[4] = double.Parse(rawTemperature5.ToString());
+                rawTmp[4] = double.Parse(rawTemperature5.ToString());
             }
         }
 
