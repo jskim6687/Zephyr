@@ -37,6 +37,20 @@ namespace Zephyr
         Series alt4;
         Series alt5;
 
+        double[] rawPrs = new double[5];
+        Series rawPrs1;
+        Series rawPrs2;
+        Series rawPrs3;
+        Series rawPrs4;
+        Series rawPrs5;
+
+        double[] rawTmp = new double[5];
+        Series rawTmp1;
+        Series rawTmp2;
+        Series rawTmp3;
+        Series rawTmp4;
+        Series rawTmp5;
+
         FileInfo file;
 
         public Form1()
@@ -69,6 +83,29 @@ namespace Zephyr
             alt5 = altChart.Series.Add("alt5");
             alt5.ChartType = SeriesChartType.Line;
 
+            rawPrsChart.Series.Clear();
+            rawPrs1 = rawPrsChart.Series.Add("rawPrs1");
+            rawPrs1.ChartType = SeriesChartType.Line;
+            rawPrs2 = rawPrsChart.Series.Add("rawPrs2");
+            rawPrs2.ChartType = SeriesChartType.Line;
+            rawPrs3 = rawPrsChart.Series.Add("rawPrs3");
+            rawPrs3.ChartType = SeriesChartType.Line;
+            rawPrs4 = rawPrsChart.Series.Add("rawPrs4");
+            rawPrs4.ChartType = SeriesChartType.Line;
+            rawPrs5 = rawPrsChart.Series.Add("rawPrs5");
+            rawPrs5.ChartType = SeriesChartType.Line;
+
+            rawTmpChart.Series.Clear();
+            rawTmp1 = rawTmpChart.Series.Add("rawTmp1");
+            rawTmp1.ChartType = SeriesChartType.Line;
+            rawTmp2 = rawTmpChart.Series.Add("rawTmp2");
+            rawTmp2.ChartType = SeriesChartType.Line;
+            rawTmp3 = rawTmpChart.Series.Add("rawTmp3");
+            rawTmp3.ChartType = SeriesChartType.Line;
+            rawTmp4 = rawTmpChart.Series.Add("rawTmp4");
+            rawTmp4.ChartType = SeriesChartType.Line;
+            rawTmp5 = rawTmpChart.Series.Add("rawTmp5");
+            rawTmp5.ChartType = SeriesChartType.Line;
         }
 
         private void refreshText()
@@ -184,6 +221,10 @@ namespace Zephyr
                 com1array.Add(lineArray);
                 var altitude1 = lineArray[6];
                 altitude[0] = double.Parse(altitude1.ToString());
+                var rawPressure1 = lineArray[4];
+                rawPrs[0] = double.Parse(rawPressure1.ToString());
+                var rawTemperature1 = lineArray[3];
+                rawPrs[0] = double.Parse(rawTemperature1.ToString());
             }
         }
 
@@ -201,6 +242,10 @@ namespace Zephyr
                 com2array.Add(lineArray);
                 var altitude2 = lineArray[6];
                 altitude[1] = double.Parse(altitude2.ToString());
+                var rawPressure2 = lineArray[4];
+                rawPrs[1] = double.Parse(rawPressure2.ToString());
+                var rawTemperature2 = lineArray[3];
+                rawPrs[1] = double.Parse(rawTemperature2.ToString());
             }
         }
 
@@ -218,6 +263,10 @@ namespace Zephyr
                 com3array.Add(lineArray);
                 var altitude3 = lineArray[6];
                 altitude[2] = double.Parse(altitude3.ToString());
+                var rawPressure3 = lineArray[4];
+                rawPrs[2] = double.Parse(rawPressure3.ToString());
+                var rawTemperature3 = lineArray[3];
+                rawPrs[2] = double.Parse(rawTemperature3.ToString());
             }
         }
 
@@ -235,6 +284,10 @@ namespace Zephyr
                 com4array.Add(lineArray);
                 var altitude4 = lineArray[6];
                 altitude[3] = double.Parse(altitude4.ToString());
+                var rawPressure4 = lineArray[4];
+                rawPrs[3] = double.Parse(rawPressure4.ToString());
+                var rawTemperature4 = lineArray[3];
+                rawPrs[3] = double.Parse(rawTemperature4.ToString());
             }
         }
 
@@ -252,6 +305,10 @@ namespace Zephyr
                 com5array.Add(lineArray);
                 var altitude5 = lineArray[6];
                 altitude[4] = double.Parse(altitude5.ToString());
+                var rawPressure5 = lineArray[4];
+                rawPrs[4] = double.Parse(rawPressure5.ToString());
+                var rawTemperature5 = lineArray[3];
+                rawPrs[4] = double.Parse(rawTemperature5.ToString());
             }
         }
 
@@ -285,29 +342,49 @@ namespace Zephyr
                 {
                     alt1.Points.AddXY(curEpoch, altitude[0]);
                     recordString = recordString + ";" + altitude[0];
+                    rawPrs1.Points.AddXY(curEpoch, rawPrs[0]);
+                    recordString = recordString + ";" + rawPrs[0];
+                    rawTmp1.Points.AddXY(curEpoch, rawTmp[0]);
+                    recordString = recordString + ";" + rawTmp[0];
                 }
                 if (activate2.Checked == true)
                 {
                     alt2.Points.AddXY(curEpoch, altitude[1]);
                     recordString = recordString + ";" + altitude[1];
+                    rawPrs2.Points.AddXY(curEpoch, rawPrs[1]);
+                    recordString = recordString + ";" + rawPrs[1];
+                    rawTmp2.Points.AddXY(curEpoch, rawTmp[1]);
+                    recordString = recordString + ";" + rawTmp[1];
                 }
                 if (activate3.Checked == true)
                 {
                     alt3.Points.AddXY(curEpoch, altitude[2]);
                     recordString = recordString + ";" + altitude[2];
+                    rawPrs3.Points.AddXY(curEpoch, rawPrs[2]);
+                    recordString = recordString + ";" + rawPrs[2];
+                    rawTmp3.Points.AddXY(curEpoch, rawTmp[2]);
+                    recordString = recordString + ";" + rawTmp[2];
                 }
                 if (activate4.Checked == true)
                 {
                     alt4.Points.AddXY(curEpoch, altitude[3]);
                     recordString = recordString + ";" + altitude[3];
+                    rawPrs4.Points.AddXY(curEpoch, rawPrs[3]);
+                    recordString = recordString + ";" + rawPrs[3];
+                    rawTmp4.Points.AddXY(curEpoch, rawTmp[3]);
+                    recordString = recordString + ";" + rawTmp[3];
                 }
                 if (activate5.Checked == true)
                 {
                     alt5.Points.AddXY(curEpoch, altitude[4]);
                     recordString = recordString + ";" + altitude[4];
+                    rawPrs5.Points.AddXY(curEpoch, rawPrs[4]);
+                    recordString = recordString + ";" + rawPrs[4];
+                    rawTmp5.Points.AddXY(curEpoch, rawTmp[4]);
+                    recordString = recordString + ";" + rawTmp[4];
                 }
 
-                recordString = recordString + ";";
+                recordString = recordString + "\n";
                 File.AppendAllText(directoryPath.Text,recordString);
 
                 curEpoch = curEpoch + 1;
@@ -342,6 +419,11 @@ namespace Zephyr
         }
 
         private void directoryPath_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
 
         }

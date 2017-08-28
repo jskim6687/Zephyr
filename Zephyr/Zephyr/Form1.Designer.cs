@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -60,6 +66,8 @@
             this.msg5 = new System.Windows.Forms.TextBox();
             this.portGroup = new System.Windows.Forms.GroupBox();
             this.DataGroup = new System.Windows.Forms.GroupBox();
+            this.drctBtn = new System.Windows.Forms.Button();
+            this.directoryPath = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.epochPercent = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -76,14 +84,16 @@
             this.epochTimer = new System.Windows.Forms.Timer(this.components);
             this.chartGroup = new System.Windows.Forms.GroupBox();
             this.altChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.directoryPath = new System.Windows.Forms.TextBox();
-            this.drctBtn = new System.Windows.Forms.Button();
             this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.rawPrsChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.rawTmpChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.portGroup.SuspendLayout();
             this.DataGroup.SuspendLayout();
             this.chartGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.altChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rawPrsChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rawTmpChart)).BeginInit();
             this.SuspendLayout();
             // 
             // serialPort1
@@ -334,6 +344,25 @@
             this.DataGroup.TabStop = false;
             this.DataGroup.Text = "Data Setting";
             // 
+            // drctBtn
+            // 
+            this.drctBtn.Location = new System.Drawing.Point(322, 84);
+            this.drctBtn.Name = "drctBtn";
+            this.drctBtn.Size = new System.Drawing.Size(75, 23);
+            this.drctBtn.TabIndex = 14;
+            this.drctBtn.Text = "Directory";
+            this.drctBtn.UseVisualStyleBackColor = true;
+            this.drctBtn.Click += new System.EventHandler(this.drctBtn_Click);
+            // 
+            // directoryPath
+            // 
+            this.directoryPath.Location = new System.Drawing.Point(8, 86);
+            this.directoryPath.Name = "directoryPath";
+            this.directoryPath.Size = new System.Drawing.Size(312, 21);
+            this.directoryPath.TabIndex = 13;
+            this.directoryPath.Text = "D:\\회사업무\\기압계\\20170828172227.txt";
+            this.directoryPath.TextChanged += new System.EventHandler(this.directoryPath_TextChanged);
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -463,6 +492,8 @@
             // 
             // chartGroup
             // 
+            this.chartGroup.Controls.Add(this.rawTmpChart);
+            this.chartGroup.Controls.Add(this.rawPrsChart);
             this.chartGroup.Controls.Add(this.altChart);
             this.chartGroup.Location = new System.Drawing.Point(10, 195);
             this.chartGroup.Name = "chartGroup";
@@ -473,43 +504,56 @@
             // 
             // altChart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.altChart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.altChart.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.altChart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.altChart.Legends.Add(legend3);
             this.altChart.Location = new System.Drawing.Point(7, 21);
             this.altChart.Name = "altChart";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.altChart.Series.Add(series1);
-            this.altChart.Size = new System.Drawing.Size(1201, 434);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.altChart.Series.Add(series3);
+            this.altChart.Size = new System.Drawing.Size(380, 434);
             this.altChart.TabIndex = 0;
             this.altChart.Text = "chart1";
-            // 
-            // directoryPath
-            // 
-            this.directoryPath.Location = new System.Drawing.Point(8, 86);
-            this.directoryPath.Name = "directoryPath";
-            this.directoryPath.Size = new System.Drawing.Size(312, 21);
-            this.directoryPath.TabIndex = 13;
-            this.directoryPath.Text = "D:\\회사업무\\기압계" + "\\" + System.DateTime.Now.ToString("yyyyMMddHHmmss") + ".txt";
-            this.directoryPath.TextChanged += new System.EventHandler(this.directoryPath_TextChanged);
-            // 
-            // drctBtn
-            // 
-            this.drctBtn.Location = new System.Drawing.Point(322, 84);
-            this.drctBtn.Name = "drctBtn";
-            this.drctBtn.Size = new System.Drawing.Size(75, 23);
-            this.drctBtn.TabIndex = 14;
-            this.drctBtn.Text = "Directory";
-            this.drctBtn.UseVisualStyleBackColor = true;
-            this.drctBtn.Click += new System.EventHandler(this.drctBtn_Click);
             // 
             // folderBrowserDialog1
             // 
             this.folderBrowserDialog1.SelectedPath = "D:\\회사업무\\기압계";
             this.folderBrowserDialog1.HelpRequest += new System.EventHandler(this.folderBrowserDialog1_HelpRequest);
+            // 
+            // rawPrsChart
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.rawPrsChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.rawPrsChart.Legends.Add(legend2);
+            this.rawPrsChart.Location = new System.Drawing.Point(398, 21);
+            this.rawPrsChart.Name = "rawPrsChart";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.rawPrsChart.Series.Add(series2);
+            this.rawPrsChart.Size = new System.Drawing.Size(410, 434);
+            this.rawPrsChart.TabIndex = 1;
+            this.rawPrsChart.Text = "chart1";
+            // 
+            // rawTmpChart
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.rawTmpChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.rawTmpChart.Legends.Add(legend1);
+            this.rawTmpChart.Location = new System.Drawing.Point(822, 21);
+            this.rawTmpChart.Name = "rawTmpChart";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.rawTmpChart.Series.Add(series1);
+            this.rawTmpChart.Size = new System.Drawing.Size(386, 434);
+            this.rawTmpChart.TabIndex = 2;
+            this.rawTmpChart.Text = "chart2";
             // 
             // Form1
             // 
@@ -529,6 +573,8 @@
             this.DataGroup.PerformLayout();
             this.chartGroup.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.altChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rawPrsChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rawTmpChart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -582,6 +628,8 @@
         private System.Windows.Forms.TextBox directoryPath;
         private System.DirectoryServices.DirectoryEntry directoryEntry1;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart rawTmpChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart rawPrsChart;
     }
 }
 
