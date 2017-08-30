@@ -16,5 +16,7 @@ namespace Zephyr
         public int Pressure { get; set; }
         public double altitude { get; set; }
         public double temperature { get; set; }
+        public double newTmp { get; set; }
+        public double newHum { get; set; }
     }
 }

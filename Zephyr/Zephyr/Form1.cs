@@ -24,27 +24,30 @@ namespace Zephyr
         public int sampling;
         public int recordFlag = 0;
 
-        ArrayList com1array = new ArrayList();
-        ArrayList com2array = new ArrayList();
-        ArrayList com3array = new ArrayList();
-        ArrayList com4array = new ArrayList();
-        ArrayList com5array = new ArrayList();
+        //ArrayList com1array = new ArrayList();
+        //ArrayList com2array = new ArrayList();
+        //ArrayList com3array = new ArrayList();
+        //ArrayList com4array = new ArrayList();
+        //ArrayList com5array = new ArrayList();
 
-        double[] altitude = new double[5];
+
+        double[,] totalArray = new double[5,7];
+
+        //double[] altitude = new double[5];
         Series alt1;
         Series alt2;
         Series alt3;
         Series alt4;
         Series alt5;
 
-        double[] rawPrs = new double[5];
+        //double[] rawPrs = new double[5];
         Series rawPrs1;
         Series rawPrs2;
         Series rawPrs3;
         Series rawPrs4;
         Series rawPrs5;
 
-        double[] rawTmp = new double[5];
+        //double[] rawTmp = new double[5];
         Series rawTmp1;
         Series rawTmp2;
         Series rawTmp3;
@@ -218,13 +221,19 @@ namespace Zephyr
             if (line.Length >= 50)
             {
                 var lineArray = cal.makeArray(line);
-               // com1array.Add(lineArray);
-                var altitude1 = lineArray[6];
-                altitude[0] = double.Parse(altitude1.ToString());
-                var rawPressure1 = lineArray[4];
-                rawPrs[0] = double.Parse(rawPressure1.ToString());
-                var rawTemperature1 = lineArray[3];
-                rawTmp[0] = double.Parse(rawTemperature1.ToString());
+                int i = 0;
+                for (int j = 0 ; j < lineArray.Count-3 ; j++ )
+                {
+                    totalArray[i, j] = double.Parse(lineArray[3 + j].ToString());
+                }
+
+                //com1array.Add(lineArray);
+                //var altitude1 = lineArray[6];
+                //altitude[0] = double.Parse(altitude1.ToString());
+                //var rawPressure1 = lineArray[4];
+                //rawPrs[0] = double.Parse(rawPressure1.ToString());
+                //var rawTemperature1 = lineArray[3];
+                //rawTmp[0] = double.Parse(rawTemperature1.ToString());
             }
         }
 
@@ -239,13 +248,18 @@ namespace Zephyr
             if (line.Length >= 50)
             {
                 var lineArray = cal.makeArray(line);
+                int i = 1;
+                for (int j = 0; j < lineArray.Count - 3; j++)
+                {
+                    totalArray[i, j] = double.Parse(lineArray[3 + j].ToString());
+                }
                 //com2array.Add(lineArray);
-                var altitude2 = lineArray[6];
-                altitude[1] = double.Parse(altitude2.ToString());
-                var rawPressure2 = lineArray[4];
-                rawPrs[1] = double.Parse(rawPressure2.ToString());
-                var rawTemperature2 = lineArray[3];
-                rawTmp[1] = double.Parse(rawTemperature2.ToString());
+                //var altitude2 = lineArray[6];
+                //altitude[1] = double.Parse(altitude2.ToString());
+                //var rawPressure2 = lineArray[4];
+                //rawPrs[1] = double.Parse(rawPressure2.ToString());
+                //var rawTemperature2 = lineArray[3];
+                //rawTmp[1] = double.Parse(rawTemperature2.ToString());
             }
         }
 
@@ -260,13 +274,18 @@ namespace Zephyr
             if (line.Length >= 50)
             {
                 var lineArray = cal.makeArray(line);
+                int i = 2;
+                for (int j = 0; j < lineArray.Count - 3; j++)
+                {
+                    totalArray[i, j] = double.Parse(lineArray[3 + j].ToString());
+                }
                 //com3array.Add(lineArray);
-                var altitude3 = lineArray[6];
-                altitude[2] = double.Parse(altitude3.ToString());
-                var rawPressure3 = lineArray[4];
-                rawPrs[2] = double.Parse(rawPressure3.ToString());
-                var rawTemperature3 = lineArray[3];
-                rawTmp[2] = double.Parse(rawTemperature3.ToString());
+                //var altitude3 = lineArray[6];
+                //altitude[2] = double.Parse(altitude3.ToString());
+                //var rawPressure3 = lineArray[4];
+                //rawPrs[2] = double.Parse(rawPressure3.ToString());
+                //var rawTemperature3 = lineArray[3];
+                //rawTmp[2] = double.Parse(rawTemperature3.ToString());
             }
         }
 
@@ -281,13 +300,18 @@ namespace Zephyr
             if (line.Length >= 50)
             {
                 var lineArray = cal.makeArray(line);
+                int i = 3;
+                for (int j = 0; j < lineArray.Count - 3; j++)
+                {
+                    totalArray[i, j] = double.Parse(lineArray[3 + j].ToString());
+                }
                 //com4array.Add(lineArray);
-                var altitude4 = lineArray[6];
-                altitude[3] = double.Parse(altitude4.ToString());
-                var rawPressure4 = lineArray[4];
-                rawPrs[3] = double.Parse(rawPressure4.ToString());
-                var rawTemperature4 = lineArray[3];
-                rawTmp[3] = double.Parse(rawTemperature4.ToString());
+                //var altitude4 = lineArray[6];
+                //altitude[3] = double.Parse(altitude4.ToString());
+                //var rawPressure4 = lineArray[4];
+                //rawPrs[3] = double.Parse(rawPressure4.ToString());
+                //var rawTemperature4 = lineArray[3];
+                //rawTmp[3] = double.Parse(rawTemperature4.ToString());
             }
         }
 
@@ -302,16 +326,20 @@ namespace Zephyr
             if (line.Length >= 50)
             {
                 var lineArray = cal.makeArray(line);
+                int i = 4;
+                for (int j = 0; j < lineArray.Count - 3; j++)
+                {
+                    totalArray[i, j] = double.Parse(lineArray[3 + j].ToString());
+                }
                 //com5array.Add(lineArray);
-                var altitude5 = lineArray[6];
-                altitude[4] = double.Parse(altitude5.ToString());
-                var rawPressure5 = lineArray[4];
-                rawPrs[4] = double.Parse(rawPressure5.ToString());
-                var rawTemperature5 = lineArray[3];
-                rawTmp[4] = double.Parse(rawTemperature5.ToString());
+                //var altitude5 = lineArray[6];
+                //altitude[4] = double.Parse(altitude5.ToString());
+                //var rawPressure5 = lineArray[4];
+                //rawPrs[4] = double.Parse(rawPressure5.ToString());
+                //var rawTemperature5 = lineArray[3];
+                //rawTmp[4] = double.Parse(rawTemperature5.ToString());
             }
         }
-
 
         private void recordBtn_Click(object sender, EventArgs e)
         {
@@ -340,48 +368,88 @@ namespace Zephyr
 
                 if (activate1.Checked == true)
                 {
-                    alt1.Points.AddXY(curEpoch, altitude[0]);
-                    recordString = recordString + ";" + altitude[0];
-                    rawPrs1.Points.AddXY(curEpoch, rawPrs[0]);
-                    recordString = recordString + ";" + rawPrs[0];
-                    rawTmp1.Points.AddXY(curEpoch, rawTmp[0]);
-                    recordString = recordString + ";" + rawTmp[0];
+                    int i = 0;
+                    alt1.Points.AddXY(curEpoch,totalArray[i,3]);
+                    rawPrs1.Points.AddXY(curEpoch,totalArray[i,1]);
+                    rawTmp1.Points.AddXY(curEpoch,totalArray[i,0]);
+                    for (int j = 0; j < 7; j++)
+                    {
+                        recordString = recordString + ";" + totalArray[i, j].ToString();
+                    }
+                    //alt1.Points.AddXY(curEpoch, altitude[0]);
+                    //recordString = recordString + ";" + altitude[0];
+                    //rawPrs1.Points.AddXY(curEpoch, rawPrs[0]);
+                    //recordString = recordString + ";" + rawPrs[0];
+                    //rawTmp1.Points.AddXY(curEpoch, rawTmp[0]);
+                    //recordString = recordString + ";" + rawTmp[0];
                 }
                 if (activate2.Checked == true)
                 {
-                    alt2.Points.AddXY(curEpoch, altitude[1]);
-                    recordString = recordString + ";" + altitude[1];
-                    rawPrs2.Points.AddXY(curEpoch, rawPrs[1]);
-                    recordString = recordString + ";" + rawPrs[1];
-                    rawTmp2.Points.AddXY(curEpoch, rawTmp[1]);
-                    recordString = recordString + ";" + rawTmp[1];
+                    int i = 1;
+                    alt2.Points.AddXY(curEpoch, totalArray[i, 3]);
+                    rawPrs2.Points.AddXY(curEpoch, totalArray[i, 1]);
+                    rawTmp2.Points.AddXY(curEpoch, totalArray[i, 0]);
+                    for (int j = 0; j < 7; j++)
+                    {
+                        recordString = recordString + ";" + totalArray[i, j].ToString();
+                    }
+                    //alt2.Points.AddXY(curEpoch, altitude[1]);
+                    //recordString = recordString + ";" + altitude[1];
+                    //rawPrs2.Points.AddXY(curEpoch, rawPrs[1]);
+                    //recordString = recordString + ";" + rawPrs[1];
+                    //rawTmp2.Points.AddXY(curEpoch, rawTmp[1]);
+                    //recordString = recordString + ";" + rawTmp[1];
                 }
                 if (activate3.Checked == true)
                 {
-                    alt3.Points.AddXY(curEpoch, altitude[2]);
-                    recordString = recordString + ";" + altitude[2];
-                    rawPrs3.Points.AddXY(curEpoch, rawPrs[2]);
-                    recordString = recordString + ";" + rawPrs[2];
-                    rawTmp3.Points.AddXY(curEpoch, rawTmp[2]);
-                    recordString = recordString + ";" + rawTmp[2];
+                    int i = 2;
+                    alt3.Points.AddXY(curEpoch, totalArray[i, 3]);
+                    rawPrs3.Points.AddXY(curEpoch, totalArray[i, 1]);
+                    rawTmp3.Points.AddXY(curEpoch, totalArray[i, 0]);
+                    for (int j = 0; j < 7; j++)
+                    {
+                        recordString = recordString + ";" + totalArray[i, j].ToString();
+                    }
+                    //alt3.Points.AddXY(curEpoch, altitude[2]);
+                    //recordString = recordString + ";" + altitude[2];
+                    //rawPrs3.Points.AddXY(curEpoch, rawPrs[2]);
+                    //recordString = recordString + ";" + rawPrs[2];
+                    //rawTmp3.Points.AddXY(curEpoch, rawTmp[2]);
+                    //recordString = recordString + ";" + rawTmp[2];
                 }
                 if (activate4.Checked == true)
                 {
-                    alt4.Points.AddXY(curEpoch, altitude[3]);
-                    recordString = recordString + ";" + altitude[3];
-                    rawPrs4.Points.AddXY(curEpoch, rawPrs[3]);
-                    recordString = recordString + ";" + rawPrs[3];
-                    rawTmp4.Points.AddXY(curEpoch, rawTmp[3]);
-                    recordString = recordString + ";" + rawTmp[3];
+                    int i = 3;
+                    alt4.Points.AddXY(curEpoch, totalArray[i, 3]);
+                    rawPrs4.Points.AddXY(curEpoch, totalArray[i, 1]);
+                    rawTmp4.Points.AddXY(curEpoch, totalArray[i, 0]);
+                    for (int j = 0; j < 7; j++)
+                    {
+                        recordString = recordString + ";" + totalArray[i, j].ToString();
+                    }
+                    //alt4.Points.AddXY(curEpoch, altitude[3]);
+                    //recordString = recordString + ";" + altitude[3];
+                    //rawPrs4.Points.AddXY(curEpoch, rawPrs[3]);
+                    //recordString = recordString + ";" + rawPrs[3];
+                    //rawTmp4.Points.AddXY(curEpoch, rawTmp[3]);
+                    //recordString = recordString + ";" + rawTmp[3];
                 }
                 if (activate5.Checked == true)
                 {
-                    alt5.Points.AddXY(curEpoch, altitude[4]);
-                    recordString = recordString + ";" + altitude[4];
-                    rawPrs5.Points.AddXY(curEpoch, rawPrs[4]);
-                    recordString = recordString + ";" + rawPrs[4];
-                    rawTmp5.Points.AddXY(curEpoch, rawTmp[4]);
-                    recordString = recordString + ";" + rawTmp[4];
+                    int i = 4;
+                    alt5.Points.AddXY(curEpoch, totalArray[i, 3]);
+                    rawPrs5.Points.AddXY(curEpoch, totalArray[i, 1]);
+                    rawTmp5.Points.AddXY(curEpoch, totalArray[i, 0]);
+                    for (int j = 0; j < 7; j++)
+                    {
+                        recordString = recordString + ";" + totalArray[i, j].ToString();
+                    }
+                    //alt5.Points.AddXY(curEpoch, altitude[4]);
+                    //recordString = recordString + ";" + altitude[4];
+                    //rawPrs5.Points.AddXY(curEpoch, rawPrs[4]);
+                    //recordString = recordString + ";" + rawPrs[4];
+                    //rawTmp5.Points.AddXY(curEpoch, rawTmp[4]);
+                    //recordString = recordString + ";" + rawTmp[4];
                 }
 
                 recordString = recordString + "\n";
@@ -399,11 +467,11 @@ namespace Zephyr
         {
             epochTimer.Stop();
             recordFlag = 0;
-            com1array.Clear();
-            com2array.Clear();
-            com3array.Clear();
-            com4array.Clear();
-            com5array.Clear();
+            //com1array.Clear();
+            //com2array.Clear();
+            //com3array.Clear();
+            //com4array.Clear();
+            //com5array.Clear();
             curEpoch = 0;
             progress.Value = curEpoch;        }
 
