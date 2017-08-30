@@ -218,7 +218,7 @@ namespace Zephyr
             if (line.Length >= 50)
             {
                 var lineArray = cal.makeArray(line);
-                com1array.Add(lineArray);
+               // com1array.Add(lineArray);
                 var altitude1 = lineArray[6];
                 altitude[0] = double.Parse(altitude1.ToString());
                 var rawPressure1 = lineArray[4];
@@ -239,7 +239,7 @@ namespace Zephyr
             if (line.Length >= 50)
             {
                 var lineArray = cal.makeArray(line);
-                com2array.Add(lineArray);
+                //com2array.Add(lineArray);
                 var altitude2 = lineArray[6];
                 altitude[1] = double.Parse(altitude2.ToString());
                 var rawPressure2 = lineArray[4];
@@ -260,7 +260,7 @@ namespace Zephyr
             if (line.Length >= 50)
             {
                 var lineArray = cal.makeArray(line);
-                com3array.Add(lineArray);
+                //com3array.Add(lineArray);
                 var altitude3 = lineArray[6];
                 altitude[2] = double.Parse(altitude3.ToString());
                 var rawPressure3 = lineArray[4];
@@ -281,7 +281,7 @@ namespace Zephyr
             if (line.Length >= 50)
             {
                 var lineArray = cal.makeArray(line);
-                com4array.Add(lineArray);
+                //com4array.Add(lineArray);
                 var altitude4 = lineArray[6];
                 altitude[3] = double.Parse(altitude4.ToString());
                 var rawPressure4 = lineArray[4];
@@ -302,7 +302,7 @@ namespace Zephyr
             if (line.Length >= 50)
             {
                 var lineArray = cal.makeArray(line);
-                com5array.Add(lineArray);
+                //com5array.Add(lineArray);
                 var altitude5 = lineArray[6];
                 altitude[4] = double.Parse(altitude5.ToString());
                 var rawPressure5 = lineArray[4];
